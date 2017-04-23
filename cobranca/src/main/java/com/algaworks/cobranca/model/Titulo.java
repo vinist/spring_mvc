@@ -75,6 +75,10 @@ public class Titulo {
 	public void setStatus(StatusTituloEnum status) {
 		this.status = status;
 	}
+	
+	public boolean isPendente() {
+		return StatusTituloEnum.PENDENTE.equals(this.status);
+	}
 
 	@Override
 	public int hashCode() {

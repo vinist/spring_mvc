@@ -1,6 +1,5 @@
 package com.algaworks.cobranca.controller;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
@@ -33,6 +32,14 @@ public class TituloController {
 		iTitulos.save(titulo);
 		ModelAndView mv = new ModelAndView("cadastroTitulo");
 		mv.addObject("mensagem", "Título salvo com sucesso!");
+		return mv;
+	}
+	
+	@RequestMapping
+	public ModelAndView pesquisar(){
+		List<Titulo> titulos = iTitulos.findAll();
+		ModelAndView mv = new ModelAndView("pesquisaTitulos");
+		mv.addObject("titulos", titulos);
 		return mv;
 	}
 	
