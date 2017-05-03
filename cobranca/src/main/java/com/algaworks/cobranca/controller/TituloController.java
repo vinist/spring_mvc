@@ -54,11 +54,16 @@ public class TituloController {
 	
 	@RequestMapping("{id}")
 	public ModelAndView edidar(@PathVariable("id") Titulo titulo){
-		//Titulo titulo = iTitulos.findOne(codigo); busca acontece direto passando o id direto no path
 		ModelAndView mv = new ModelAndView(CADASTRO_VIEW);
 		mv.addObject(titulo);
 		return mv;
-		
+	}
+	
+	@RequestMapping(value="{id}", method = RequestMethod.DELETE)
+	public String excluir(@PathVariable Long id, RedirectAttributes attributes){
+		iTitulos.delete(id);
+		attributes.addFlashAttribute("mensagem", "Título excluído com sucesso!");
+		return "redirect:/titulos";
 	}
 	
 	@ModelAttribute("listStatusTitulo")
