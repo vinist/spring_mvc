@@ -1,5 +1,9 @@
+/* tela grande */
+@media(min-width: 768px) {
+	.panel-default {margin-right: 1em; margin-left: 1em;}
+}
+
 .navbar-brand {padding-top: 0.3em; }
-.panel-default {margin-right: 1em; margin-left: 1em;}
 .alert {margin-right: 1em; margin-left: 1em;}
 .link-panel {float:right; padding: 1em;}
 .link-titulo {float:left; padding: 1em;}
